@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "e-hallpass"
+version = "0.1.0"
+description = ""
+authors = ["Krishnan Shankar <krishnans2006@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Flask = "^3.0.2"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.3.0"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
