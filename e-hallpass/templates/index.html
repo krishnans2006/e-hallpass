@@ -3,5 +3,26 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h1>Sign in/out</h1>
+<h1>Home</h1>
+
+{% if session.get("user") %}
+
+<div class="d-flex flex-column align-items-center">
+    <a class="btn btn-success" href="{{ url_for('form') }}">
+        <i class="bi bi-door-closed"></i>
+        Sign In/Out
+    </a>
+</div>
+
+{% else %}
+
+<div class="d-flex flex-column align-items-center">
+    <a class="btn btn-success" href="{{ url_for('login') }}">
+        <i class="bi bi-box-arrow-in-right"></i>
+        Log In
+    </a>
+</div>
+
+{% endif %}
+
 {% endblock %}

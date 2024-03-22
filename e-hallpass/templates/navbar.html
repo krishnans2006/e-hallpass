@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ url_for('index') }}">Sign in/out</a>
+        <a class="navbar-brand" href="{{ url_for('index') }}"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -12,9 +12,18 @@
 
             <!-- Right navbar -->
             {% if session.get("user") %}
+            <span class="navbar-text">
+                {{ session["user"] }}
+                &nbsp;
+            </span>
+            <a class="btn btn-outline-primary" href="{{ url_for('logout') }}">
+                Logout
+                &nbsp;
+                <i class="bi bi-box-arrow-right"></i>
+            </a>
             {% else %}
-            <a class="btn btn-outline-danger" href="{{ url_for('login') }}">
-                Admin Login
+            <a class="btn btn-outline-success" href="{{ url_for('login') }}">
+                Log In
                 &nbsp;
                 <i class="bi bi-box-arrow-in-right"></i>
             </a>
