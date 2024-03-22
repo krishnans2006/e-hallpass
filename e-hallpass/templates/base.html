@@ -18,6 +18,7 @@
 
     {% include "navbar.html" %}
     <div class="container py-2">
+        <center><h1>{{ self.title() }}</h1></center>
         {% block content %}{% endblock %}
     </div>
     {% block script %}{% endblock %}
